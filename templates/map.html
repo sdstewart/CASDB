@@ -1,0 +1,77 @@
+{# _flask/templates/index.html #}
+
+{% extends 'base.html' %}
+{% block title %}CASDB Maps{% endblock %} 
+{% block h1%}<h4></h4>{% endblock %}
+{% block body_01 %}
+    <div class="row row-cols-1 row-cols-lg-2 g-4">
+        <div class="col">
+          <div class="card">
+            <img
+              src="../static/images/map_hometown2.png"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Hometown Map</h5>
+              <p class="card-text">
+                Several maps showing the hometown for over 400 scientists employed by the 
+                National Agricultural Research Bureau and how the geographic distribution 
+                of these scientists changed overtime. 
+              </p>
+              <a class="btn btn-outline-secondary" href="map-hometown">Explore here</a>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col">
+            <div class="card">
+              <img
+                src="../static/images/map_hometown2.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Institutions Map</h5>
+                <p class="card-text">
+                    Coming soon...
+                </p>
+                <a class="btn btn-outline-secondary disabled" href="#" target="_blank">Explore here</a>
+                
+              </div>
+            </div>
+          </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+<!--MAP API
+  <div class="container mt-3">
+  <div id="map"></div>
+</div>
+
+<script>
+  //Define the lat lon coordinate
+  var latLng = [41.789649, -87.599702];
+
+  //Set attribution and access key URL
+  var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+  'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+  mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+
+  var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox/light-v9', tileSize: 512, zoomOffset: -1, attribution: mbAttr}),
+  streets  = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mbAttr});
+
+  var map = L.map('map', {
+    center: latLng,
+    zoom: 16,
+    layers: [grayscale]
+  });
+
+  L.marker(latLng).addTo(map)
+  .bindPopup("<b>UChicago<br>Campus</b>").openPopup();
+
+</script>-->

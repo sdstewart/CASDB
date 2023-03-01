@@ -1,0 +1,52 @@
+<header class="header" role="banner">
+  <h3 class="header-logo-text d-none d-md-block">Chinese Agricultural Scientist Database</h3>
+  <h5 class="d-md-none">Chinese Agricultural Scientist Database</h5>
+</header>
+
+<nav class="navbar navbar-expand-md navbar-light border-bottom border-top border-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav nav-fill w-100">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="CASDB">CASDB Online</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="map">Maps</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="networks">Social Networks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  var pathname = window.location.pathname;
+  var cleanPath = pathname.substring(pathname.lastIndexOf('/') + 1);
+  $('[href*="' + cleanPath + '"]').addClass('active');
+</script>
+
+<footer class ="footer mt-auto py-3 navbar-light border-top border-dark">
+  <div class="container">
+    <span class="text-muted">
+      <strong>&#169; 2021 spencer stewart</strong> 
+    </span>
+  </div>
+</footer>

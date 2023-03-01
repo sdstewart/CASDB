@@ -1,0 +1,68 @@
+{# _flask/templates/index.html #}
+
+{% extends 'base.html' %}
+{% block title %}Networks{% endblock %} 
+{% block h1%}<h4></h4>{% endblock %}
+{% block body_01 %}
+{% endblock %}
+
+{% block body_02 %} 
+    <div class="row row-cols-1 row-cols-lg-2 g-4">
+        <div class="col">
+          <div class="card">
+            <img
+              src="../static/images/network_education_image.png"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Education Network</h5>
+              <p class="card-text">
+                  A social network of scientists based on where they attended school. 
+                  The nodes represent individual scientists 
+                  and edges linking the scientists represent 
+                  that both individuals attended the same college/university.
+                  Different colored links represent different 
+                  institutions. 
+              </p>
+              <a class="btn btn-outline-secondary" href="networks-education">Explore here</a>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col">
+            <div class="card">
+              <img
+                src="../static/images/network_education_image.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Employment Network</h5>
+                <p class="card-text">
+                    Coming soon...
+                </p>
+                <a class="btn btn-outline-secondary disabled" href="#">Explore here</a>
+                
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img
+                src="../static/images/network_education_image.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Publication Network</h5>
+                <p class="card-text">
+                    Coming soon...
+                </p>
+                <a class="btn btn-outline-secondary disabled" href="#">Explore here</a>
+                
+              </div>
+            </div>
+          </div>
+    </div>
+{% endblock %}

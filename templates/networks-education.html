@@ -1,0 +1,65 @@
+{# _flask/templates/index.html #}
+
+{% extends 'base.html' %}
+{% block title %}Networks-Education{% endblock %} 
+{% block h1%}<h4>Education Network</h4>{% endblock %}
+{% block body_01 %}
+
+
+
+{% endblock %}
+
+{% block body_02 %}
+<p>
+    The over 400 scientists employed by the 
+    National Agricultural Research Bureau 中央農業實驗所 (NARB) in the mid to late 1940s
+    received postsecondary educations from over 140 different institutions in China, 
+    the United States, Japan, France, the United Kingdom, and the Philippines (see Figure 1). 
+    The vast majority of degrees and training were received from institutions in China, 
+    which reflects the growing agricultural education institutions during this time. 
+    The United States was the next most common destination of study.
+    The few number of scientists studying in Japan is noteworthy. 
+    According to the 1935 membership records for the Agricultural Association of China 中華農學會 (AAC) 
+    containing records for 2,330 individuals, agronomists were roughly three times more likely to have 
+    studied in Japan than in the United States. 
+    The war with Japan certainly had an impact on this, 
+    but it is also likely that NARB’s historical ties to the University of Nanking and even Cornell impact our sample. 
+</p>
+<center><i>Figure 1: Education Degrees/Training by Country</i>
+</br><img src="../static/images/ed_country_plot.jpeg" class="img-fluid" style="height:60%; width:60%;"></center>
+
+<p>
+    Networks present another way to visualize and explore agricultural education in Republican China. 
+    Figure 2 is a basic social network where the nodes are individual scientists and the links 
+    represent that both individuals attended the same education institution. 
+    The most important institutions are represented by different colored links. 
+    The main clusters represent some of the main agricultural institutions from the Republican era. 
+    These include:
+    <li>Pink: 私立金陵大學</li>
+    <li>Green: 國立中央大學</li>
+    <li>Light-Blue: 國立浙江大學</li>
+    <li>Red: Cornell University</li>
+    <li>Orange: 國立四川大學</li>
+    <li>Light-Gray: 國立西北農學院</li>
+</br>The clusters confirm much of what we already know about agricultural education in Republican China,
+    especially the importance of 私立金陵大學, 國立中央大學, 國立浙江大學, 
+    and Cornell in training the first few generations of agronomists in China. 
+    However, it also suggests important avenues for future research. 
+    For example, the influence of institutions such as 國立四川大學 and 國立西北農學院 
+    before and during the Sino-Japanese War (1937-45) deserves additional attention. 
+    Moreover, the large number of individuals who share little to no connection to any of the main clusters or 
+    one another illustrates the volume and variety of educational institutions and experiences during this time.
+</p>
+
+<p>
+    Interact with the network below. Use the search bar to search for a specific scientist or 
+    click on any given node to view more information about the scientist. 
+</p>
+<center><i>Figure 2: Network of Agricultural Education</i></center>
+<div class="network">
+    <iframe id="inlineFrameExample"
+    title="Inline Frame Example"
+    style="border: 3px solid #EEE; width: 100%; height: 600px;"
+    src="https://sdstewart.github.io/CASDB/network/network_education.html"></iframe>
+</div> 
+{% endblock %}

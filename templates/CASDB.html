@@ -1,0 +1,92 @@
+{# _flask/templates/CASDB.html #}
+
+{% extends 'base.html' %}
+
+{% block title %}CASDB Online{% endblock %} 
+{% block h1%}
+
+<script>
+    $(function() {
+        $.ajax({
+            url: '{{ url_for("autoName") }}'
+            }).done(function (data) {
+                $('#name').autocomplete({
+                    source: data.json_list,
+                    minLength: 1
+                });
+            });
+        });
+    $(function() {
+        $.ajax({
+            url: '{{ url_for("autoGender") }}'
+            }).done(function (data) {
+                $('#gender').autocomplete({
+                    source: data.json_list,
+                    minLength: 1
+                });
+            });
+        });
+    $(function() {    
+        $.ajax({
+            url: '{{ url_for("autoInst") }}'
+            }).done(function (data) {
+                $('#institution').autocomplete({
+                    source: data.json_list,
+                    minLength: 1
+                });
+            });
+        });
+    $(function() {
+        $.ajax({
+            
+            url: '{{ url_for("autoProv") }}'
+            }).done(function (data) {
+                $('#prov').autocomplete({
+                    source: data.json_list,
+                    minLength: 1
+                });
+            });
+            console.log()
+    });
+</script>
+
+
+
+<form method="POST" autocomplete = "off">
+    <div class="row row-cols-1 row-cols-lg-4 g-4">
+        <div class="columns">
+            <div class="input">
+                {{ form.name }} 
+            </div>
+            <label>{{ form.name.label }} </label>
+        </div>
+        <div class="columns">
+            <div class="input">
+                {{ form.gender }}
+            </div>
+            <label>{{ form.gender.label }}</label>
+        </div>
+        <div class="columns">
+            <div class="input">
+                {{ form.prov }}
+            </div>
+            <label>{{ form.prov.label }}</label>
+        </div>
+        <div class="columns">
+            <div class="input">
+                {{ form.institution }}
+            </div>
+            <label>{{ form.institution.label }}</label>
+        </div>
+    </div>
+    <input type="submit" class="btn btn-outline-secondary" name='btn' value="Search">
+    <input type="submit" class="btn btn-outline-secondary" name='btn' value="Clear">
+</form>
+{% endblock %}
+
+
+{% block body_01 %}
+
+{% include 'results.html' %}
+
+{% endblock %}

@@ -1,0 +1,133 @@
+{% if full == "TRUE" %}
+<div class="container min-vh-50" style="padding: 20px">
+    <h6>Results: {{queryData|count}}</h6>
+    <table class="table table-striped order-table" id="CASDBTable">
+        <thead class="thead-dark" id="CASDBTableColumns">
+            <tr>
+                <th style="text-align: left; width: 10%">姓名</th>
+                <th style="text-align: left; width: 10%">別名</th>
+                <th style="text-align: left; width: 10%">性別</th>
+                <th style="text-align: left; width: 10%">出生年</th>
+                <th style="text-align: left; width: 10%">籍貫（省）</th>
+                <th style="text-align: left; width: 10%">籍貫（縣）</th>
+            </tr>
+        </thead>
+        <tbody id="CASDBTableBody">
+            {% for item in queryData %}
+            <tr>
+                <td>
+                    <form method="POST" autocomplete = "off">
+                        <input type="submit" class="btn btn-link" name='btn' value={{ item[2] }}>
+                    </form>
+                </td>
+                <td>{{ item[6] }}</td>
+                <td>{{ item[4] }}</td>
+                <td>{{ item[3] }}</td>
+                <td>{{ item[9] }}</td>
+                <td>{{ item[11] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+
+{% if full == "FALSE" %}
+
+<div class="container min-vh-50" style="padding: 20px">
+<a href="#" onclick="history.go(-1)">Back to results</a>
+{% for item in bioQuery %}
+<p><h4> {{ item[2] }}</h4></p>
+{% endfor %}
+<h6>基本資料</h6>
+<table class="table table-striped order-table" id="CASDBTable">
+    <thead class="thead-dark" id="CASDBTableColumns">
+        <tr>
+            <th style="text-align: left; width: 10%">姓名</th>
+            <th style="text-align: left; width: 10%">別名</th>
+            <th style="text-align: left; width: 10%">性別</th>
+            <th style="text-align: left; width: 10%">出生年</th>
+            <th style="text-align: left; width: 10%">籍貫（省）</th>
+            <th style="text-align: left; width: 10%">籍貫（縣）</th>
+        </tr>
+    </thead>
+
+    <tbody id="CASDBTableBody">
+        {% for item in bioQuery %}
+        <tr>
+            <td>{{ item[2] }}</td>
+            <td>{{ item[3] }}</td>
+            <td>{{ item[4] }}</td>
+            <td>{{ item[6] }}</td>
+            <td>{{ item[9] }}</td>
+            <td>{{ item[11] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+<div class="container min-vh-50" style="padding: 20px">
+<h6>學歷</h6>
+<table class="table table-striped order-table" id="CASDBTable">
+    <thead class="thead-dark" id="CASDBTableColumns">
+        <tr>
+            <th style="text-align: left; width: 20%">學習機關</th>
+            <th style="text-align: left; width: 20%">機關地點</th>
+            <th style="text-align: left; width: 10%">院系科別</th>
+            <th style="text-align: left; width: 10%">休業起</th>
+            <th style="text-align: left; width: 10%">休業訖</th> 
+            <th style="text-align: left; width: 10%">學位</th>
+        </tr>
+    </thead>
+
+    <tbody id="CASDBTableBody">
+        {% for item in edQuery %}
+        <tr>
+            <td>{{ item[38] }}</td>
+            <td>{{ item[43] }}, {{ item[41] }} ({{ item[40] }}) </td>
+            <td>{{ item[5] }}</td>
+            <td>{{ item[6] }}</td>
+            <td>{{ item[8] }}</td>
+            <td>{{ item[11] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+<div class="container min-vh-50" style="padding: 20px">
+    <h6>工作經驗</h6>
+    <table class="table table-striped order-table" id="CASDBTable">
+        <thead class="thead-dark" id="CASDBTableColumns">
+            <tr>
+                <th style="text-align: left; width: 20%">工作機關</th>
+                <th style="text-align: left; width: 10%">機關地點</th>
+                <th style="text-align: left; width: 10%">職別</th>
+                <th style="text-align: left; width: 10%">等級</th>
+                <th style="text-align: left; width: 10%">俸薪</th> 
+                <th style="text-align: left; width: 20%">擔任事務</th>
+                <th style="text-align: left; width: 10%">到職年</th>
+                <th style="text-align: left; width: 10%">卸職年</th>
+            </tr>
+        </thead>
+    
+        <tbody id="CASDBTableBody">
+            {% for item in emQuery %}
+            <tr>
+                <td>{{ item[6] }}</td>
+                <td> NA </td>
+                <td>{{ item[7] }}</td>
+                <td>{{ item[8] }}</td>
+                <td>{{ item[9] }}</td>
+                <td>{{ item[10] }}</td>
+                <td>{{ item[11] }}</td>
+                <td>{{ item[13] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endif %}

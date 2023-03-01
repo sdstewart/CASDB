@@ -1,0 +1,68 @@
+{# _flask/templates/about.html #}
+
+{% extends 'base.html' %}
+{% block title %}CASDB About{% endblock %} 
+{% block h1%}
+<p>
+    <i>
+        NOTE: We are still in the process of transcribing personnel records 
+        and will make them available when completed. This beta site 
+        contains personnel records for 437 individuals affiliated with the 
+        National Agricultural Research Bureau 中央農業實驗所 (NARB) in the late 1940s. 
+    </i>
+</p>
+{% endblock %}
+
+{% block body_01 %}
+<h4><center>ABOUT</center></h4>
+    <p>The Chinese Agricultural Scientist Database (CASDB) is a relational database that 
+        aims to compile biographical information for every agricultural scientists from 
+        China during the first half of the twentieth century. This includes basic 
+        biographical data in addition to information on education, employment, and 
+        scientific publications. The database allows researchers to discover information about
+        individual scientists or to conduct larger-scale statistical, 
+        spatial, or social network analyses.</p>
+
+    <h4><center>SOURCES</center></h4>
+    <p>
+        Sources for the first phase of the project come from personnel records 
+        (see figure 1) from the Archives of the Institute of Modern History at Academia Sinica, 
+        Taipei, Taiwan. Personnel records were collected for scientists affiliated with central and 
+        local agricultural research institutions in the 1940s. To date, we have collected
+        personnel files for around five thousand scientists working at over 50 different
+        institutions throughout China. We are still in the process of transcribing the records
+        and will make them available when completed. 
+    </p>
+    <p>
+    <center><i>Figure 1: Personnel Record for Sun Enlin</i>
+    </br><img src="../static/images/sun.JPG" width=75% height=75%/>
+    </center>
+    </p>
+
+    <p>
+        After transcribing the personnel records, we converted the files into an 
+        SQL relational database containing seven tables with their respective variables
+        as found in Figure 2. Different colored boxes represent how the  tables 
+        are connected to one another. The Education, Employment, Publications, and Social tables 
+        are connected to the Scientist table through the SCIENTIST_PK/FK variable (Red). 
+        The Education and Employment tables are linked to the Institution table through the 
+        INST_PK/FK variable (Blue). And the Scientist and Institution tables are linked to 
+        the Geography table through the GEO_PK/FK variable (Green). The Publications 
+        table was supplemented with metadata from the Shanghai Library's 全国报刊索引 and the 大成老旧刊全文数据库. 
+    </p>
+    <p>
+        <center><i>Figure 2: CASDB SQL Database Tables and Variables</i>
+        </br><img src="../static/images/database organization2.jpg" width=100% height=100%/>
+        </center>
+    </p>
+
+
+    <h4><center>PROJECT MEMBERS</center></h4>
+        <ul>
+            <li>Spencer Stewart, Ph.D. Candidate in History, University of Chicago</li>
+            <!--<li>Wang Siming, Professor and Director of ICAC, Nanjing Agricultural University</li>-->
+            <li>Xia Rubing, Assistant Professor in ICAC, Nanjing Agricultural University</li>
+            <li>Duan Yan, Graduate Student in ICAC, Nanjing Agricultural University</li>
+        </ul>
+    </p>
+{% endblock %}

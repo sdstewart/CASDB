@@ -1,0 +1,87 @@
+{# _flask/templates/index.html #}
+
+{% extends 'base.html' %}
+{% block title %}Map Hometown{% endblock %} 
+{% block h1%}<center><h4>Hometown Maps</h4></center>{% endblock %}
+{% block body_01%}
+
+<p>
+    Below are several maps showing the hometowns for over 400 scientists employed by the 
+    National Agricultural Research Bureau 中央農業實驗所 (NARB) in the mid to late 1940s. 
+    According to the data, 24.7% of scientists (108) were from Jiangsu and 15.8% (69) 
+    were from Zhejiang. This is relatively consistent with the 1935 membership records for 
+    the Agricultural Association of China 中華農學會 (AAC) containing records for 2,330 agronomists
+    (this data shows that nearly 30 percent of scientists were from Jiangsu and 13 percent from Zhejiang).
+</p>
+
+<center>
+  <i>Figure 1: Hometowns (Click on the image to view an interactive map)</i>
+    <a href="https://rpubs.com/sdstewart/746262" target="_blank">
+        <img src="../static/images/map-hometown-R.png" class="img-fluid" style="height:80%; width:80%;">
+    </a>
+</center>
+
+
+{% endblock %}
+
+{% block body_02%}
+
+<p>
+</br>Further exploration of the data highlights a general geographic shift overtime, 
+    which accounts for the lower percentage of scientists born in Jiangsu in the
+    NARB data compared to the AAC data. 
+    The maps below plots the hometown for scientists born in different decades. 
+    It shows that overtime, a growing number of scientists at NARB were born in 
+    other parts of the country, especially Western China. The relocation of NARB to Sichuan 
+    with the outbreak of the Sino-Japanese War in 1937 was a major contributing factor in the 
+    incorporation of local talent into the agricultural research at NARB. 
+    Toggle between the maps in Figure 2 to see this change overtime. 
+</p>
+
+<center>
+  <i>Figure 2: Changes in Hometown Overtime (birth by decade)</i>
+<div id="mapCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" style="height:80%; width:80%;">
+    <div class="carousel-indicators" style="filter: invert(1);">
+      <button type="button" data-bs-target="#mapCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#mapCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#mapCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#mapCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../static/images/hometown-1890s.jpeg" class="d-block w-100" alt="...">
+        <div class="carousel-caption" style="color:black; top: 0;">
+            <h4>1890s</h4>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../static/images/hometown-1900s.jpeg" class="d-block w-100" alt="...">
+        <div class="carousel-caption" style="color:black; top: 0;">
+            <h4>1900s</h4>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../static/images/hometown-1910s.jpeg" class="d-block w-100" alt="...">
+        <div class="carousel-caption" style="color:black; top: 0;">
+            <h4>1910s</h4>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../static/images/hometown-1920s.jpeg" class="d-block w-100" alt="...">
+        <div class="carousel-caption" style="color:black; top: 0;">
+            <h4>1920s</h4>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#mapCarousel" data-bs-slide="prev" style="filter: invert(1);">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mapCarousel" data-bs-slide="next" style="filter: invert(1);">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</center>
+
+{% endblock %}

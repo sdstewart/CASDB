@@ -1,0 +1,75 @@
+{# _flask/templates/sample.html #}
+
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %} 
+{% block h1%}
+    <a href="#" onclick="history.go(-1)">Return to Results</a>
+{% endblock %}
+
+{% block body_01 %}
+
+{% for item in bioQuery %}
+<p><h4> {{ item[2] }}</h4></p>
+{% endfor %}
+
+<div class="container min-vh-50" style="padding: 20px">
+    <h6>Biographical Information</h6>
+    <table class="table table-striped order-table" id="CASDBTable">
+        <thead class="thead-dark" id="CASDBTableColumns">
+            <tr>
+                <th style="text-align: left; width: 10%">姓名</th>
+                <th style="text-align: left; width: 10%">別名</th>
+                <th style="text-align: left; width: 10%">性別</th>
+                <th style="text-align: left; width: 10%">出生年</th>
+                <th style="text-align: left; width: 10%">籍貫（省）</th>
+                <th style="text-align: left; width: 10%">籍貫（縣）</th>
+            </tr>
+        </thead>
+
+        <tbody id="CASDBTableBody">
+            {% for item in bioQuery %}
+            <tr>
+                <td>{{ item[2] }}</td>
+                <td>{{ item[3] }}</td>
+                <td>{{ item[4] }}</td>
+                <td>{{ item[6] }}</td>
+                <td>{{ item[9] }}</td>
+                <td>{{ item[11] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="container min-vh-50" style="padding: 20px">
+    <h6>Education Information</h6>
+    <table class="table table-striped order-table" id="CASDBTable">
+        <thead class="thead-dark" id="CASDBTableColumns">
+            <tr>
+                <th style="text-align: left; width: 10%">學習機關</th>
+                <th style="text-align: left; width: 10%">籍貫地點</th>
+                <th style="text-align: left; width: 10%">院系科別</th>
+                <th style="text-align: left; width: 10%">休業起</th>
+                <th style="text-align: left; width: 10%">休業訖</th> 
+                <th style="text-align: left; width: 10%">學位</th>
+            </tr>
+        </thead>
+
+        <tbody id="CASDBTableBody">
+            {% for item in edQuery %}
+            <tr>
+                <td>{{ item[38] }}</td>
+                <td>{{ item[43] }}, {{ item[41] }} ({{ item[40] }}) </td>
+                <td>{{ item[5] }}</td>
+                <td>{{ item[6] }}</td>
+                <td>{{ item[8] }}</td>
+                <td>{{ item[11] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

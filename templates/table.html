@@ -1,0 +1,28 @@
+{# _flask/templates/table.html #}
+
+{% extends 'base.html' %}
+{% block title %}OCHRE API{% endblock %} 
+{% block h1%}<h1>OCHRE API Example</h1>{% endblock %}
+{% block body_01 %}
+<div class="container min-vh-50">
+    <table class="table table-striped order-table" id="ochreTable">
+        <thead class="thead-dark" id="ochreTableColumns">
+            <tr>
+                <th style="text-align: left; width: 30%">Name</th>
+                <th style="text-align: left; width: 30%">Type</th>
+                <th style="text-align: left; width: 30%">Language</th>
+            </tr>
+        </thead>
+
+        <tbody id="ochreTableBody">
+            {% for dict_item in texts_list %}
+            <tr>
+                {% for key, value in dict_item.items() %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

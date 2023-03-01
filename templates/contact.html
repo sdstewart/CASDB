@@ -1,0 +1,46 @@
+{# _flask/templates/index.html #}
+
+{% extends 'base.html' %}
+{% block title %}CASDB Contact{% endblock %} 
+{% block h1%}<h4>Please leave us a message</h4>{% endblock %}
+{% block body_01 %}
+    <form id="contact-form" method="post" action="contact.php" role="form">
+
+        <div class="messages"></div>
+    
+        <div class="controls">
+    
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="form_name">Name</label>
+                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Name" required="required" data-error="Name is required.">
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="form_email">Email</label>
+                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Email" required="required" data-error="Valid email is required.">
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="form_message">Message</label>
+                        <textarea id="form_message" name="message" class="form-control" placeholder="Type message here..." rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <input type="submit" class="btn btn-outline-secondary" value="Send message">
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+{% endblock %}
